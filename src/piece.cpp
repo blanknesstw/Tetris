@@ -32,14 +32,14 @@ bool Piece::moveDown(Board& b) {    //往下移動，移動失敗就移回來，
     return true;
 }
 
-bool Piece::rotate(Board& b) {
+bool Piece::rotate(Board& b) {  //旋轉
     int old = rotation;
     rotation = (rotation + 1) % 4;
     if (!isValidPosition(b)) { rotation = old; return false; }
     return true;
 }
 
-void Piece::lock(Board& b) {
+void Piece::lock(Board& b) {    //固定方塊要遊戲介面，把方塊的每個格子寫到 board.grid 裡
     int mask = SHAPES[type][rotation];
     for (int i = 0; i < 16; i++) {
         if (!(mask & (1 << (15 - i)))) continue;
@@ -49,7 +49,7 @@ void Piece::lock(Board& b) {
     }
 }
 
-bool Piece::isValidPosition(Board& b) {
+bool Piece::isValidPosition(Board& b) { //檢查整個方塊的位置有沒有把方塊 16 個格子都用 board.isValid() 檢查一遍
     int mask = SHAPES[type][rotation];
     for (int i = 0; i < 16; i++) {
         if (!(mask & (1 << (15 - i)))) continue;
