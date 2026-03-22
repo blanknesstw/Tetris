@@ -7,26 +7,26 @@ Piece::Piece() {
     spawn();
 }
 
-void Piece::spawn() {
+void Piece::spawn() {   //生成新方塊
     type = rand() % 7;  // 隨機選 0~6
     rotation = 0;
     x = 3;  // 從中間生成
     y = 0;  // 從頂部生成
 }
 
-bool Piece::moveLeft(Board& b) {
+bool Piece::moveLeft(Board& b) {    //左右移動，先移動，如果撞牆就移回來
     x--;
     if (!isValidPosition(b)) { x++; return false; }
     return true;
 }
 
-bool Piece::moveRight(Board& b) {
+bool Piece::moveRight(Board& b) {   //左右移動，先移動，如果撞牆就移回來
     x++;
     if (!isValidPosition(b)) { x--; return false; }
     return true;
 }
 
-bool Piece::moveDown(Board& b) {
+bool Piece::moveDown(Board& b) {    //往下移動，移動失敗就移回來，回傳 false 代表碰底了
     y++;
     if (!isValidPosition(b)) { y--; return false; }
     return true;
