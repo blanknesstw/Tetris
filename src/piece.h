@@ -26,4 +26,5 @@ public:
     bool rotate(Board& b);    // 旋轉
     void lock(Board& b);      // 固定到盤面
     void print(Board& b);     // 印出目前方塊位置
+    bool isValidPosition(Board& b);  // 加在 public 裡面
 };
