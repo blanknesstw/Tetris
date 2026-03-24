@@ -10,8 +10,8 @@ public:
     bool running;
 
     Game();
-    void run();       // 主迴圈
-    void input();     // 處理鍵盤輸入
-    void update();    // 更新遊戲狀態
-    void render();    // 渲染畫面
+    void run();       
+    void input();     
+    void update();    
+    void render();   
 };
