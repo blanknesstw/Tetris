@@ -54,6 +54,7 @@ void Game::update() {
         if (!current.isValidPosition(board)) {
             running = false;
             std::cout << "Game Over! Score: " << score << "\n";
+            system("pause");  // 等待按鍵才關閉
         }
     }
 }
