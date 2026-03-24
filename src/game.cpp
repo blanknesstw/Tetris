@@ -13,10 +13,10 @@ void Game::run() {
     auto lastDrop = std::chrono::steady_clock::now();
 
     while (running) {
-        // 1. ¿é¤J
+        // 1. ï¿½ï¿½J
         input();
 
-        // 2. ­«¤O¡]¨C 500ms ¦Û°Ê¤U­°¡^
+        // 2. ï¿½ï¿½ï¿½Oï¿½]ï¿½C 500ms ï¿½Û°Ê¤Uï¿½ï¿½ï¿½^
         auto now = std::chrono::steady_clock::now();
         auto diff = std::chrono::duration_cast<std::chrono::milliseconds>(now - lastDrop).count();
         if (diff > 500) {
@@ -24,7 +24,7 @@ void Game::run() {
             lastDrop = now;
         }
 
-        // 3. ´è¬V
+        // 3. ï¿½ï¿½V
         render();
 
         std::this_thread::sleep_for(std::chrono::milliseconds(16));
@@ -40,10 +40,10 @@ void Game::input() {
         if (ch == 'w') current.rotate(board);
         if (ch == 224 || ch == 0) {
             ch = _getch();
-            if (ch == 75) current.moveLeft(board);   // ¡ö
-            if (ch == 77) current.moveRight(board);  // ¡÷
-            if (ch == 80) current.moveDown(board);   // ¡õ
-            if (ch == 72) current.rotate(board);     // ¡ô
+            if (ch == 75) current.moveLeft(board);   // ï¿½ï¿½
+            if (ch == 77) current.moveRight(board);  // ï¿½ï¿½
+            if (ch == 80) current.moveDown(board);   // ï¿½ï¿½
+            if (ch == 72) current.rotate(board);     // ï¿½ï¿½
         }
     }
 }
@@ -55,7 +55,7 @@ void Game::update() {
         score += lines * 100;
         current.spawn();
 
-        // ·s¤è¶ô¥Í¦¨´N¤£¦Xªk = Game Over
+        // ï¿½sï¿½ï¿½ï¿½Í¦ï¿½ï¿½Nï¿½ï¿½ï¿½Xï¿½k = Game Over
         if (!current.isValidPosition(board)) {
             running = false;
             std::cout << "Game Over! Score: " << score << "\n";
@@ -64,7 +64,7 @@ void Game::update() {
 }
 
 void Game::render() {
-    system("cls");  // ²M°£µe­±
+    system("cls");  // ï¿½Mï¿½ï¿½ï¿½eï¿½ï¿½
     std::cout << "Score: " << score << "\n";
     board.print();
 }
