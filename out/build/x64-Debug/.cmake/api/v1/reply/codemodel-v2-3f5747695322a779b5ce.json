@@ -2,11 +2,12 @@
 	"configurations" : 
 	[
 		{
+			"abstractTargets" : [],
 			"directories" : 
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"jsonFile" : "directory-.-Debug-f6f22219c74102c3da70.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.10"
@@ -39,7 +40,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Tetris::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Tetris-Debug-17a0d0e313fa7974e0d6.json",
+					"jsonFile" : "target-Tetris-Debug-45503f1d3e259d48d873.json",
 					"name" : "Tetris",
 					"projectIndex" : 0
 				}
@@ -49,12 +50,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/blank/source/repos/Tetris/out/build/x64-Debug",
-		"source" : "C:/Users/blank/source/repos/Tetris"
+		"build" : "C:/visual studio/\u81ea\u4e3b\u5b78\u7fd2/test/Tetris/out/build/x64-Debug",
+		"source" : "C:/visual studio/\u81ea\u4e3b\u5b78\u7fd2/test/Tetris"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 8
+		"minor" : 9
 	}
 }
