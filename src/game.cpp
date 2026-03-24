@@ -55,7 +55,7 @@ void Game::update() {
             running = false;
             std::cout << "Game Over! Score: " << score << "\n";
             std::cout << "U ARE GAY" << score << "\n";
-            system("pause");  // 等待按鍵才關閉
+            while (_getch() != ' ');  // 等到按下空白鍵
         }
     }
 }
