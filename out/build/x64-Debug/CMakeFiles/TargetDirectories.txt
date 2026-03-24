@@ -1,0 +1,3 @@
+C:/visual studio/自主學習/test/Tetris/out/build/x64-Debug/CMakeFiles/Tetris.dir
+C:/visual studio/自主學習/test/Tetris/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+C:/visual studio/自主學習/test/Tetris/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir
