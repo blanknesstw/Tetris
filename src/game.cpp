@@ -1,0 +1,70 @@
+#include "game.h"
+#include <conio.h>
+#include <iostream>
+#include <chrono>
+#include <thread>
+
+Game::Game() {
+    score = 0;
+    running = true;
+}
+
+void Game::run() {
+    auto lastDrop = std::chrono::steady_clock::now();
+
+    while (running) {
+        // 1. 輸入
+        input();
+
+        // 2. 重力（每 500ms 自動下降）
+        auto now = std::chrono::steady_clock::now();
+        auto diff = std::chrono::duration_cast<std::chrono::milliseconds>(now - lastDrop).count();
+        if (diff > 500) {
+            update();
+            lastDrop = now;
+        }
+
+        // 3. 渲染
+        render();
+
+        std::this_thread::sleep_for(std::chrono::milliseconds(16));
+    }
+}
+
+void Game::input() {
+    if (_kbhit()) {
+        int ch = _getch();
+        if (ch == 'a') current.moveLeft(board);
+        if (ch == 'd') current.moveRight(board);
+        if (ch == 's') current.moveDown(board);
+        if (ch == 'w') current.rotate(board);
+        if (ch == 224 || ch == 0) {
+            ch = _getch();
+            if (ch == 75) current.moveLeft(board);   // ←
+            if (ch == 77) current.moveRight(board);  // →
+            if (ch == 80) current.moveDown(board);   // ↓
+            if (ch == 72) current.rotate(board);     // ↑
+        }
+    }
+}
+
+void Game::update() {
+    if (!current.moveDown(board)) {
+        current.lock(board);
+        int lines = board.clearLines();
+        score += lines * 100;
+        current.spawn();
+
+        // 新方塊生成就不合法 = Game Over
+        if (!current.isValidPosition(board)) {
+            running = false;
+            std::cout << "Game Over! Score: " << score << "\n";
+        }
+    }
+}
+
+void Game::render() {
+    system("cls");  // 清除畫面
+    std::cout << "Score: " << score << "\n";
+    board.print();
+}
