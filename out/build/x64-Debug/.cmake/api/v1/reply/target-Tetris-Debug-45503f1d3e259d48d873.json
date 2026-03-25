@@ -32,6 +32,11 @@
 			}
 		]
 	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	},
 	"compileGroups" : 
 	[
 		{
@@ -69,7 +74,11 @@
 				"role" : "flags"
 			},
 			{
-				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:console",
+				"fragment" : "/machine:x64 /debug /INCREMENTAL",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "/subsystem:console",
 				"role" : "flags"
 			},
 			{
