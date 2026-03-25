@@ -4,13 +4,15 @@
 const int ROWS = 20;
 const int COLS = 10;
 
+class Piece;  // 前向宣告，告訴編譯器 Piece 存在
+
 class Board {
 public:
     int grid[ROWS][COLS];
 
-    Board();          // 初始化盤面
-    void clear();     // 清空盤面
-    bool isValid(int row, int col);  // 檢查格子是否可用
-    int clearLines(); // 消行，回傳消了幾行
-    void print();     // 印出盤面
+    Board();
+    void clear();
+    bool isValid(int row, int col);
+    int clearLines();
+    void print(Piece& p);  // 用參考
 };

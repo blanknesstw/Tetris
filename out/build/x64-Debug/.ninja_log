@@ -8,3 +8,8 @@
 490	950	7960578515335613	Tetris.exe	d39794de3313ba32
 3	446	7960583522089168	CMakeFiles/Tetris.dir/src/game.cpp.obj	f10c25dda0d32031
 446	886	7960583526526326	Tetris.exe	d39794de3313ba32
+12	496	7961398296104134	CMakeFiles/Tetris.dir/src/piece.cpp.obj	d9eddee1ebd6654d
+4	502	7961398296024084	CMakeFiles/Tetris.dir/src/main.cpp.obj	17674bdc1af0d099
+8	517	7961398296064132	CMakeFiles/Tetris.dir/src/board.cpp.obj	86bc891464f5b9e0
+15	566	7961398296134078	CMakeFiles/Tetris.dir/src/game.cpp.obj	f10c25dda0d32031
+566	1130	7961398301644414	Tetris.exe	d39794de3313ba32
