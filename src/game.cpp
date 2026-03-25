@@ -54,8 +54,7 @@ void Game::update() {
         if (!current.isValidPosition(board)) {
             running = false;
             std::cout << "Game Over! Score: " << score << "\n";
-            std::cout << "U ARE GAY" << "\n";
-            std::cout << "點擊Space退出" << "\n";
+            std::cout << "U ARE GAY" << score << "\n";
             while (_getch() != ' ');  // 等到按下空白鍵
         }
     }
@@ -64,5 +63,5 @@ void Game::update() {
 void Game::render() {
     std::cout << "\033[H";
     std::cout << "Score: " << score << "\n";
-    board.print(current);
+    board.print();
 }

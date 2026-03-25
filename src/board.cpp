@@ -1,5 +1,4 @@
 #include "board.h"
-#include "piece.h"
 
 Board::Board() {
     clear();
@@ -40,20 +39,11 @@ int Board::clearLines() {
     return count;
 }
 
-void Board::print(Piece& p) {
-    int mask = SHAPES[p.type][p.rotation];
+void Board::print() {
     for (int r = 0; r < ROWS; r++) {
         std::cout << "|";
-        for (int c = 0; c < COLS; c++) {
-            int i = (r - p.y) * 4 + (c - p.x);
-            bool isPiece = (r >= p.y && r < p.y + 4 && c >= p.x && c < p.x + 4)
-                && (i >= 0 && i < 16)
-                && (mask & (1 << (15 - i)));
-            if (isPiece)
-                std::cout << "#";
-            else
-                std::cout << (grid[r][c] ? "#" : " ");
-        }
+        for (int c = 0; c < COLS; c++)
+            std::cout << (grid[r][c] ? "#" : " ");
         std::cout << "|\n";
     }
     std::cout << "+----------+\n";
